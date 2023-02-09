@@ -1,3 +1,7 @@
+import './global.scss'
+import styles from './home.module.scss'
+import ContainerLeft from '@/components/Containers/containerLeft';
+import ContainerRight from '@/components/Containers/containerRight';
 
 export default function RootLayout({
   children,
@@ -11,7 +15,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className={styles.container}>
+        <ContainerLeft/>
+        {children}
+        <ContainerRight/>
+        </body>
     </html>
   )
 }

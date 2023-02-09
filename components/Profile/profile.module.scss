@@ -1,0 +1,66 @@
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    border-radius: 125px;
+
+
+    .usernameGroup {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .userName {
+            font-size: 20px;
+            font-weight:500;
+            color: rgba(70, 69, 69, 1);
+        }
+    }
+
+    .settings {
+        margin-right: 15px;
+        color: rgba(70, 69, 69, 1);
+        font-weight: 900;
+        font-size: larger;
+    }
+    
+    .profilePic {
+        margin: 0px 10px;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    &:hover {
+        background-color: rgb(93, 128, 128);
+
+        .profilePic {
+            opacity: 50%;
+        }
+
+        .userName {
+            color: rgb(99, 96, 96);
+        }
+
+        .settings {
+            color: rgb(99, 96, 96);
+        }
+    }
+
+    &:active {
+        background-color: rgb(75, 119, 119);
+
+        .profilePic {
+            opacity: 30%;
+        }
+
+        .userName {
+            color: rgb(122, 111, 111);
+        }
+
+        .settings {
+            color: rgb(122, 111, 111);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.containerLeft {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    height: 1000px;
+    width: 30%;
+    border: solid 1px black;
+    padding: 15px;
+    box-sizing: border-box;
+    left: 0%;
+    position: relative;
+    .listContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.containerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+    width: 30%;
+    border: solid 1px black;
+    right: 0;
+    position: relative;
+}
