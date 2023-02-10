@@ -1,7 +1,7 @@
 import './global.scss'
 import styles from './home.module.scss'
-import ContainerLeft from '@/components/Containers/containerLeft';
-import ContainerRight from '@/components/Containers/containerRight';
+import ContainerLeft from '@/components/containers/containerLeft';
+import ContainerRight from '@/components/containers/containerRight';
 
 export default function RootLayout({
   children,
