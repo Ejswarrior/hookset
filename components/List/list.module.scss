@@ -1,15 +1,15 @@
 .listStyles {
-    width: 250px;
+    width: 200px;
     height: 50px;
     border-radius: 125px;
 
     display: flex;
     justify-content: flex-start;
-
+    align-items: center;
     list-style: none;
 
     .listImage {
-        padding: 0px 15px
+        margin-right: 20px;
     }
 
     .listChildren {
@@ -25,4 +25,13 @@
     &:active {
         background-color: rgb(75, 119, 119);
     }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 250px;
+    padding: 0;
 }

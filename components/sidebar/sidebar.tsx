@@ -1,4 +1,5 @@
 import styles from './sideBar.module.scss'
+import Link from 'next/link'
 
 export default function SideBar() {
     
@@ -11,10 +12,10 @@ export default function SideBar() {
 
         <div className={styles.sideBarNav}>
             <ul>
-                <li>profile</li>
-                <li>Notifications</li>
-                <li>Messages</li>
-                <li>Settings</li>
+                <li><img/><Link href="profile">Profile</Link></li>
+                <li><img/><Link href="/notification">Notifications</Link></li>
+                <li><img/><Link href='/messages'>Messages</Link></li>
+                <li><img/><Link href='/setting'>Settings</Link></li>
             </ul>
         </div>
     </div>

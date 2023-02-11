@@ -1,11 +1,11 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import { ReactNode } from "react"
 import styles from './list.module.scss'
 
-interface ListItemProps {
+export interface ListItemProps {
     href: string;
-    src: string;
+    src: StaticImageData;
     alt: string;
     children: ReactNode;
 }
