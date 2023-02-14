@@ -11,7 +11,6 @@ interface ListProps {
 
 export default function List(props: ListProps) {
     const {data} = props
-    console.log(data)
     return (
         <ul className={styles.list}>
             {data.map((item) => {

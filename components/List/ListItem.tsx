@@ -16,7 +16,7 @@ export default function ListItem(props: ListItemProps) {
 
     return (
         <Link href={href}><li className={styles.listStyles}>
-                <Image src={src} alt={alt} width={25} height={25} className={styles.ListImage}/>
+                <Image src={src} alt={alt} width={25} height={25} className={styles.listImage}/>
                 <label className={styles.ListChildren}>{children}</label>
         </li></Link>
     )

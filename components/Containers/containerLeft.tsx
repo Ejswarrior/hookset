@@ -1,6 +1,10 @@
 import Profile from "../Profile/Profile"
 import styles from './container.module.scss'
 import List from "../List/list"
+import home from '../../public/home.png';
+import notification from '../../public/notification.png';
+import messages from '../../public/messenger.png';
+import settings from '../../public/email.png';
 
 
 export default function ContainerLeft() {
@@ -8,25 +12,25 @@ export default function ContainerLeft() {
     const data = [
         {
             children: 'Home',
-            src:'/public/home.png',
+            src: home,
             alt: 'home',
             href: 'home'
         },
         {
             children: 'Notifications',
-            src:'/public/notification.png',
+            src: notification,
             alt: 'Notification Icon',
             href: '/notifications'
         },
         {
             children: 'Messages',
-            src:'/public/messages.png',
+            src: messages,
             alt: 'Messages Icon',
             href: '/messages'
         },
         {
             children: 'Settings',
-            src:'/public/settings.png',
+            src: settings,
             alt: 'Setting Icon',
             href: '/settings'
         }
