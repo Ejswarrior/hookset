@@ -33,7 +33,14 @@ export default function ContainerLeft() {
             src: settings,
             alt: 'Setting Icon',
             href: '/settings'
+        },
+        {
+            children: 'Catches',
+            src: settings,
+            alt: 'Setting Icon',
+            href: '/catches'
         }
+
     ]
     return (
         <div className={styles.containerLeft}>

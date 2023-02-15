@@ -9,7 +9,7 @@ export async function Home(){
     return(
             <div className={styles.containerMiddle}>
                 <div className={styles.feedSticky}>
-                    <h1>Home</h1>
+                    <h1>Map</h1>
                 </div>
                 <div className={styles.post}><Post/></div>
             </div>
