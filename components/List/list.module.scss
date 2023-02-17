@@ -8,6 +8,9 @@
     align-items: center;
     list-style: none;
 
+    a {
+        text-decoration: none;
+    }
     .listImage {
         padding: 0px 20px;
     }
@@ -15,15 +18,15 @@
     .listChildren {
         font-size: 20px;
         font-weight: 500;
-        color: rgb(70, 69, 69);
+        color: #0D0D0C;
     }
 
     &:hover {
-        background-color: rgb(93, 128, 128);
+        background-color: #131312;
     }
 
     &:active {
-        background-color: rgb(75, 119, 119);
+        background-color: #131312;
     }
 }
 

@@ -13,8 +13,8 @@ export default function List(props: ListProps) {
     const {data} = props
     return (
         <ul className={styles.list}>
-            {data.map((item) => {
-                return <ListItem src={item.src} alt={item.alt} href={item.href}>{item.children}</ListItem>
+            {data.map((item, index) => {
+                return <ListItem key={index} src={item.src} alt={item.alt} href={item.href}>{item.children}</ListItem>
             })}
         </ul>
     )

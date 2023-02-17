@@ -1,8 +1,13 @@
-import styles from './container.module.scss'
-
+'use client'
+import styles from './container.module.scss';
+import SearchBar from '../Search/SearchBar';
+import {useState} from 'react'
 export default function ContainerRight() {
+
+    const [searchValue, setValue] = useState('')
     return (
         <div className={styles.containerRight}>
+            <SearchBar value={searchValue} onChange={(e) => {setValue(e.target.value)}} />
         </div>
     )
 
