@@ -19,3 +19,11 @@ to show what fish are where and when.
     - Next js
     - TypeScript
     - Scss
+    - Java(Springboot)
+    - SQL
+
+## To Run
+
+    npm install
+
+    npm run dev
