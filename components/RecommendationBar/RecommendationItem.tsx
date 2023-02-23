@@ -19,11 +19,9 @@ export default function RecommendationItem(props: RecommendationItemProps) {
     const {src, alt, fish, fishNumber, catches, bait, water, userName } = props;
 
     return( 
-
-        <div>
             <li className={styles.recList}>
                 <div className={styles.fishTitleGroup}>
-                    <Image className={styles.recIamge} src={src} alt={alt} width={100} height={100}/>
+                    <Image className={styles.recIamge} src={src} alt={alt} width={40} height={40}/>
                     <h1 className={styles.fishTitle}>#{fishNumber} {fish}</h1>
                 </div>
                 <div className={styles.fishList}>
@@ -33,7 +31,5 @@ export default function RecommendationItem(props: RecommendationItemProps) {
                     <h4 className={styles.listItem}>Top {fish} catcher: {userName}</h4>
                 </div>
             </li>
-        </div>
-
     )
 }

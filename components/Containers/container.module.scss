@@ -5,12 +5,11 @@
     height: 1000px;
     width: 28%;
     border-radius: 30px;
-    border-right: solid 1px rgb(167, 182, 184);
+    border: solid 1px black;
     padding: 15px;
     box-sizing: border-box;
     right: 0%;
     position: relative;
-    background-color: #080807;
     .listTitle{
         align-self: center;
     }
@@ -28,9 +27,7 @@
     align-self: flex-end;
     height: 1000px;
     width: 25%;
-    border-radius: 30px;
-    border-left: solid 1px rgb(167, 182, 184);
+    border: solid 1px black;
     right: 0;
     position: relative;
-    padding: 20px;
 }

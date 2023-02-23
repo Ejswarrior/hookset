@@ -6,15 +6,8 @@ export default function PostInput() {
     const [postContent, setPostContent] = useState('')
  return (
     <div>
-        <div>Profile</div>
-        <input type='text' value={postContent} onChange={(e) => setPostContent(e.target.value)} placeholder={'Tight Lines!'} className={styles.postInput}/>
-
-        <div>
-        <Image/>
-        <Image/>
-        <Image/>
-        <input type='submit' value={'Post'}/>
-        </div>
+        <div>Make a Post</div>
+        <div>Add a Catch</div>
     </div>
  )
 }
