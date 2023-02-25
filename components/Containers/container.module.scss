@@ -5,11 +5,13 @@
     height: 1000px;
     width: 28%;
     border-radius: 30px;
-    border: solid 1px black;
+    border-right: solid 1px white;
     padding: 15px;
     box-sizing: border-box;
     right: 0%;
     position: relative;
+    padding: 10px;
+
     .listTitle{
         align-self: center;
     }
@@ -27,7 +29,10 @@
     align-self: flex-end;
     height: 1000px;
     width: 25%;
-    border: solid 1px black;
+    border-left: solid 1px white;
     right: 0;
+    padding: 10px;
+    border-radius: 30px;
+
     position: relative;
 }
