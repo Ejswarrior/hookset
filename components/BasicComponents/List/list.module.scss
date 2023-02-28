@@ -1,3 +1,4 @@
+
 .listStyles {
     width: 200px;
     height: 50px;
@@ -8,9 +9,7 @@
     align-items: center;
     list-style: none;
 
-    a {
-        text-decoration: none;
-    }
+    
     .listImage {
         padding: 0px 20px;
     }
@@ -18,8 +17,27 @@
     .listChildren {
         font-size: 20px;
         font-weight: 500;
-        color: #0D0D0C;
+        color: white;
+        text-decoration: none;
     }
+
+    &.expanded {
+        width: 60px;
+        align-items: center;
+        justify-content: center;
+
+        .listChildren {
+            display: none;
+        }
+
+        .listImage {
+            margin: 0;
+            margin-bottom: 5px;
+            height: 30px;
+            width: 30px;
+            background-color: aqua;
+        }
+}
 
     &:hover {
         background-color: #131312;
@@ -28,13 +46,20 @@
     &:active {
         background-color: #131312;
     }
+
 }
+
 
 .list {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 250px;
     padding: 0;
+
+    &.expanded {
+        width: 60px;
+        margin: 0px;
+    }
 }

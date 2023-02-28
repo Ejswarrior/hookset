@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 250px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 125px;
-
+    margin-bottom: 20px;
 
     .usernameGroup {
         display: flex;
@@ -30,6 +30,17 @@
         margin: 0px 10px;
         gap: 15px;
         border-radius: 10px;
+    }
+
+    &.expanded {
+        width: 250px;
+    }
+
+    .userExpanded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
     }
 
     &:hover {

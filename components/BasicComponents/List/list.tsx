@@ -7,14 +7,20 @@ import { ListItemProps } from "./ListItem"
 
 interface ListProps {
     data: ListItemProps[];
+    expanded: boolean;
 }
 
 export default function List(props: ListProps) {
-    const {data} = props
+    const {data, expanded} = props
+
+    const listStyles = [styles.list]
+
+    if (!expanded) listStyles.push(styles.expanded)
+
     return (
-        <ul className={styles.list}>
+        <ul className={listStyles.join(' ')}>
             {data.map((item, index) => {
-                return <ListItem key={index} src={item.src} alt={item.alt} href={item.href}>{item.children}</ListItem>
+                return <ListItem key={index} expanded={expanded} src={item.src} alt={item.alt} href={item.href}>{item.children}</ListItem>
             })}
         </ul>
     )

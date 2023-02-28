@@ -1,5 +1,4 @@
 'use client'
-import { type } from "os";
 import { ReactNode, useState } from "react";
 import styles from "./PostForm.module.scss"
 
@@ -23,11 +22,10 @@ export default function FormPost(props: FormPostProps) {
         helperText,
         error} = props
 
-        const inputStyles = [styles.postInput]
+        const inputStyles = [styles.inputContainer]
 
-        if ( error ) {
-            inputStyles.push(styles.error)
-        }
+        if ( error ) inputStyles.push(styles.error)
+
         const [value, setValue] = useState('')
 
         const _onChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -36,10 +34,10 @@ export default function FormPost(props: FormPostProps) {
         }
 
     return (
-        <div className={styles.inputContainer}>
+        <div className={inputStyles.join(" ")}>
 
             <textarea
-                className={inputStyles.join(" ")}
+                className={styles.postInput}
                 required={required}
                 id={id}
                 maxLength={maxLength}

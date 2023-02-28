@@ -31,7 +31,13 @@
                 color: rgb(221, 215, 215);
             }
         }
+        @media only screen and (max-width: 768px){
+            width: 100%;
+        }
     }
+
+    
 }
+
 
 
