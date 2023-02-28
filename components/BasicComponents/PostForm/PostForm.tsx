@@ -1,6 +1,7 @@
-import { type } from 'os';
-import { ReactNode } from 'react';
-import styles from './PostForm.module.scss'
+'use client'
+import { type } from "os";
+import { ReactNode, useState } from "react";
+import styles from "./PostForm.module.scss"
 
 interface FormPostProps {
     id: string;
@@ -10,7 +11,6 @@ interface FormPostProps {
     required: boolean;
     helperText: ReactNode;
     error: boolean;
-    type: 'text' | 'email' | 'password';
 }
 
 export default function FormPost(props: FormPostProps) {
@@ -21,32 +21,36 @@ export default function FormPost(props: FormPostProps) {
         required,
         placeHolder,
         helperText,
-        error,
-        type } = props
+        error} = props
 
         const inputStyles = [styles.postInput]
-        const textStyles = [styles.helperText]
 
         if ( error ) {
             inputStyles.push(styles.error)
-            textStyles.push(styles.error)
+        }
+        const [value, setValue] = useState('')
+
+        const _onChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
+            setValue(evt.target.value)
+            console.log(value)
         }
 
     return (
         <div className={styles.inputContainer}>
 
-            <input
-                className={inputStyles.join(' ')}
+            <textarea
+                className={inputStyles.join(" ")}
                 required={required}
                 id={id}
-                type={type}
                 maxLength={maxLength}
                 name={name}
                 placeholder={placeHolder}
+                draggable={false}
+                onChange={_onChange}
+                value={value}
             />
-            <p className={textStyles.join(' ')}>{helperText}</p>
+            <p className={styles.helperText}>{helperText}</p>
 
-        
         </div>
     )
 }

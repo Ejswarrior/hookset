@@ -1,19 +1,24 @@
-.postContainer {
+.inputContainer {
 
     .postInput {
-        width: 200px;
-        height: 150px;
-        border: 1px solid black;
+        min-width: 400px;
+        min-height: 100px;
+        border:  1.5px solid gray;
+        border-radius: 30px;
+        padding: 15px 15px;
+        box-sizing: border-box;
+        resize: none;
+        background-color: #131312;
 
-        &:invalid {
-            border: 1px solid red;
+        &::placeholder{
+            text-align: left;
+            vertical-align: top;    
         }
         &:hover {
-            border: 1px solid rgb(78, 104, 107);
+            border:  1.5px solid rgb(78, 104, 107);
         }
-
         &.error {
-            border: 1px solid red;
+            border: 1.5px solid red;
             color: red;
         }
     }
@@ -21,10 +26,16 @@
     .helperText {
         font-size: 16px;
         color: rgb(161, 158, 158);
+        margin-top: 5px;
+        margin-left: 15px;
 
         &.error {
             color: red;
         }
     }
 
+}
+
+.error {
+    
 }
