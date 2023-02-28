@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './profile.module.scss';
-import dw from '../../public/dw.jpg';
+import dw from '../../../public/dw.jpg';
 
 
 export default function Profile() {

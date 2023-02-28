@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    height: 1000px;
-    width: 28%;
+    width: 340px;
+    max-height: 100%;
     border-radius: 30px;
     border-right: solid 1px white;
     padding: 15px;
@@ -11,6 +11,7 @@
     right: 0%;
     position: relative;
     padding: 10px;
+    margin-right: 20px;
 
     .listTitle{
         align-self: center;
@@ -19,20 +20,29 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 768px){
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
     }
 }
+
+
 
 .containerRight {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: flex-end;
-    height: 1000px;
-    width: 25%;
+    max-height: 100%;
+    width: 300px;
     border-left: solid 1px white;
     right: 0;
     padding: 10px;
     border-radius: 30px;
-
     position: relative;
 }

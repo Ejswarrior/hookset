@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 150px;
+    max-height: 350px;
     align-items: center;
     justify-content: center;
     border-top: 2px solid rgba(236, 231, 231, 0.705) ;
     border-bottom: 2px solid rgb(238, 226, 226);
-  
     text-shadow: 1px;
+    overflow: hidden
+    ;
     .attribution {
       display: flex;
       align-items: center;
@@ -47,11 +48,12 @@
       align-items: center;
       justify-content: center;
       width: calc(80% - 20px);
-      min-height: 75px;
+      min-height: 150px;
       margin: 15px 10px;
       box-sizing: border-box;
       font-size: 14px;
       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      overflow: hidden;
     }
     .postIcons{
       display: flex;
@@ -85,7 +87,7 @@
   
   
   .iconComment {
-    background-image: url('../../public/messenger.png');
+    background-image: url('../../../public/messenger.png');
     background-repeat: no-repeat;
     width: 16px;
     height: 16px;
@@ -93,7 +95,7 @@
   
   
   .iconLike {
-    background-image: url('../../public/heart.png') ;
+    background-image: url('../../../public/heart.png') ;
     background-repeat: no-repeat;
     width: 16px;
     height: 16px;

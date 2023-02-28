@@ -1,10 +1,10 @@
 import Profile from "../Profile/Profile"
 import styles from './container.module.scss'
 import List from "../List/list"
-import home from '../../public/home.png';
-import notification from '../../public/notification.png';
-import messages from '../../public/messenger.png';
-import settings from '../../public/email.png';
+import home from '../../../public/home.png';
+import notification from '../../../public/notification.png';
+import messages from '../../../public/messenger.png';
+import settings from '../../../public/email.png';
 
 
 export default function ContainerLeft() {

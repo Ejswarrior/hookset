@@ -1,7 +1,7 @@
 'use client';
 
 import RecommendationGroup from "./RecommendationGroup";
-import dw from '../../public/dw.jpg';
+import dw from '../../../public/dw.jpg';
 
 export default function RecommendationBar() {
 
