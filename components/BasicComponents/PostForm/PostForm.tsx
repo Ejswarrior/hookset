@@ -12,7 +12,7 @@ interface FormPostProps {
     error: boolean;
 }
 
-export default function FormPost(props: FormPostProps) {
+export default function PostForm(props: FormPostProps) {
     const {
         id, 
         name,
