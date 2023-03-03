@@ -20,11 +20,11 @@ interface SearchInputProps {
     /*Toggle Error state for input */
     error: boolean;
     /*Text underneath the input */
-    helperText: string;
+    helperText?: string;
     /*Accepts an change event function for input */
-    onChange:(evt: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
     /*List of options for the Data list */
-    data: DataListProps[]
+    data: string[]
 }
 
 
@@ -43,14 +43,14 @@ export default function SearchInput(props: SearchInputProps) {
                 required={required}
                 id={id}
                 name={name}
-                type='search'
                 onChange={onChange}
                 className={styles.input}
+                list={dataListId}
             />
-            {data && <datalist className={styles.dataList} id={dataListId}>
-                {data.map((item) => 
-                    <option value={item.value}/>
-                )}
+            {data && <datalist className={styles.dataList} name="fishSearch" id={dataListId}>
+                {data.map((item) => (
+                    <option value={item}/>
+                ))}
             </datalist>}
             {helperText && <label className={styles.helperText}>{helperText}</label>}
         </div>

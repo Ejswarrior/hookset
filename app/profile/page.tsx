@@ -1,18 +1,18 @@
+import SearchInput from "@/components/BasicComponents/SearchInput/SearchInput"
 
-import PostForm from '../../components/BasicComponents/PostForm/PostForm'
 export default function profile() {
-    const data = {
-        id: '',
-        name: 'input',
-        maxLength: 30,
-        placeHolder: "Talk About fish here",
-        required: true,
-        helperText: 'Please be mindful!',
-        error: true,
-        type: "email",
-    }
+    const data = ['steelhead', 'salmon', 'smallmouth', 'largemouth', 'pike', 'musky', 'browntrout']
 
     return (
-        <PostForm {...data} />
+        <SearchInput 
+        placeholder={'Search fish...'}
+        required
+        id='searchfish'
+        name='searchfish'
+        error={false}
+        data={data}
+        dataListId='search'
+        helperText='search your fish'
+        />
     )
 }
