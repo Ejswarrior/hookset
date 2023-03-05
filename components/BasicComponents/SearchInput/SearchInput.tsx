@@ -47,7 +47,7 @@ export default function SearchInput(props: SearchInputProps) {
                 className={styles.input}
                 list={dataListId}
             />
-            {data && <datalist className={styles.dataList} name="fishSearch" id={dataListId}>
+            {data && <datalist className={styles.dataList} id={dataListId}>
                 {data.map((item) => (
                     <option value={item}/>
                 ))}
