@@ -1,0 +1,50 @@
+$-hookset-text-input-height: 40px;
+$-hookset-text-input-width: 400px;
+$-hookset-error-color-ondark: rgb(177, 37, 37);
+$-hookset-disabled-color-onlight: rgb(133, 129, 129);
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+
+    .textInput {
+        height: $-hookset-text-input-height;
+        width: $-hookset-text-input-width;
+        border: black 1px solid;
+        border-radius: 5px;
+        color: black;
+    }
+
+    .helperText {
+        font-size: 14px;
+        font-family: 'Courier New', Courier, monospace;
+        margin-bottom: 15px;
+        margin-right: 10px;
+    }
+
+    &:invalid {
+        border: 1px $-hookset-error-color-ondark solid;
+
+        .helperText {
+            color: $-hookset-error-color-ondark
+        }
+    }
+
+    &.error {
+        border: 1px $-hookset-error-color-ondark solid;
+
+        .helperText {
+            color: $-hookset-error-color-ondark
+        }
+    }
+
+    &.disabled {
+        background-color: $-hookset-disabled-color-onlight;
+
+        border: none;
+
+        .helperText {
+            color: $-hookset-disabled-color-onlight;
+        }
+    }
+}

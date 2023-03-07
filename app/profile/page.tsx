@@ -1,18 +1,17 @@
 import SearchInput from "@/components/BasicComponents/SearchInput/SearchInput"
+import TextInput from "@/components/BasicComponents/TextInput/TextInput"
 
 export default function profile() {
-    const data = ['steelhead', 'salmon', 'smallmouth', 'largemouth', 'pike', 'musky', 'browntrout']
 
     return (
-        <SearchInput 
-        placeholder={'Search fish...'}
-        required
-        id='searchfish'
-        name='searchfish'
-        error={false}
-        data={data}
-        dataListId='search'
-        helperText='search your fish'
+        <TextInput 
+            required
+            type='password'
+            helperText="Enter in your password."
+            placeholder='Enter in your password.'
+            name='textinput'
+            id='textinput'
+            maxlength={25}
         />
     )
 }
