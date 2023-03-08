@@ -1,4 +1,4 @@
-
+import buttonStyles from 'button.module.scss'
 
 export interface ButtonProps {
     /**
@@ -18,12 +18,13 @@ export interface ButtonProps {
 export default function ButtonPrimary(props: ButtonProps) {
 
     const {type, disabled, children} = props
+
     return (
         <div>
             <button
+            className={buttonStyles.button}
             type={type}
             disabled={disabled}
-            
             >
             {children}
             </button>

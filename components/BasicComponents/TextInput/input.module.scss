@@ -10,11 +10,20 @@ $-hookset-disabled-color-onlight: rgb(133, 129, 129);
     .textInput {
         height: $-hookset-text-input-height;
         width: $-hookset-text-input-width;
-        border: black 1px solid;
+        border: black 3px solid;
         border-radius: 5px;
         color: black;
-    }
 
+        &:hover {
+            border-color: rgb(107, 235, 235);
+        }
+
+        &:active {
+            border: none;
+        }
+    
+    }
+  
     .helperText {
         font-size: 14px;
         font-family: 'Courier New', Courier, monospace;

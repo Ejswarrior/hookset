@@ -1,0 +1,16 @@
+.buttonStyles {
+    width: 200px;
+    width: 40px;
+    border-radius: 16px;
+
+
+    &:hover {
+        background-color: aqua;
+    }
+
+    &:active {
+        background-color: rgb(64, 140, 253);
+    }
+
+    background-color: rgb(108, 180, 218);
+}
