@@ -1,3 +1,4 @@
+import { SurfaceProps } from '@/utils/SharedProps';
 import styles from './SearchInput.module.scss'
 
 
@@ -6,7 +7,7 @@ interface DataListProps {
     value: string | number | readonly string[] | undefined
 }
 
-interface SearchInputProps {
+interface SearchInputProps extends SurfaceProps {
     /*PlaceHolder text for input */
     placeholder?: string;
     /*Id for input */
@@ -30,11 +31,13 @@ interface SearchInputProps {
 
 export default function SearchInput(props: SearchInputProps) {
 
-    const {placeholder, required, id, name, error, onChange, data, dataListId, helperText} = props
+    const {placeholder, required, id, name, error, onChange, data, dataListId, helperText, surface='light'} = props
 
     const inputStyles = [styles.inputContainer]
 
     if (error) inputStyles.push(styles.error)
+
+    if (surface === 'dark') inputStyles.push(styles.dark)
 
     return (
         <div className={inputStyles.join(' ')}>

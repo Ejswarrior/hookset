@@ -34,17 +34,17 @@
             background-color: rgb(182, 180, 180);
         }
 
-        &.dark {
-            background-color: #000000;
-            color: #FFFFFF;
-            
-        &:hover {
-            background-color: #161616;
-        }
-    
-        &:active {
-            background-color: #222121;
-        }
+            &.dark {
+                background-color: #000000;
+                color: #FFFFFF;
+                
+            &:hover {
+                background-color: #161616;
+            }
+        
+            &:active {
+                background-color: #222121;
+            }
         }
     }
 } 

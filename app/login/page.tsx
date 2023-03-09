@@ -3,6 +3,7 @@
 import TextInput from "@/components/BasicComponents/TextInput/TextInput";
 import loginStyles from './login.module.scss';
 import ButtonPrimary from "@/components/BasicComponents/Button/ButtonPrimary";
+import TextLink from "@/components/BasicComponents/TextLink/TextLink";
 
 export default function LoginPage() {
     return (
@@ -32,6 +33,7 @@ export default function LoginPage() {
                             id='textinput'
                             maxlength={35}
                         />
+                        <TextLink link='./google'>Reset your password</TextLink>
                     </div>
                 </div>
 

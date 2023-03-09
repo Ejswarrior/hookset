@@ -1,6 +1,8 @@
-import buttonStyles from './button.module.scss'
+import buttonStyles from './button.module.scss';
+import { SurfaceProps } from '@/utils/SharedProps';
 
-export interface ButtonProps {
+
+export interface ButtonProps extends SurfaceProps {
     /*
      * Set Button Type
      */
@@ -24,16 +26,18 @@ export interface ButtonProps {
     /* 
     onCLick Event handler for the button
     */
-    onClick?: (evt: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function ButtonPrimary(props: ButtonProps) {
 
-    const {type, disabled, children, variation, tabIndex, ...rest} = props
+    const {type, disabled, children, variation, tabIndex, surface, ...rest} = props;
 
-    const buttonVariation = [buttonStyles.button]
+    const buttonVariation = [buttonStyles.button];
 
-    if (variation === 'secondary') buttonVariation.push(buttonStyles.secondary)
+    if (variation === 'secondary') buttonVariation.push(buttonStyles.secondary);
+
+    if (surface === 'dark') buttonVariation.push(buttonStyles.dark);
 
     return (
         <div>

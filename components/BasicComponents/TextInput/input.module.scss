@@ -36,6 +36,13 @@ $-hookset-disabled-color-onlight: rgb(133, 129, 129);
         }
     }
 
+    &.dark {
+
+        .helperText {
+            color: white;
+        }
+    }
+
     &.error {
         border: 1px $-hookset-error-color-ondark solid;
 
