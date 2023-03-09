@@ -10,24 +10,21 @@ $-hookset-disabled-color-onlight: rgb(133, 129, 129);
     .textInput {
         height: $-hookset-text-input-height;
         width: $-hookset-text-input-width;
-        border: black 3px solid;
+        border: black 1px solid;
         border-radius: 5px;
         color: black;
 
         &:hover {
             border-color: rgb(107, 235, 235);
         }
-
-        &:active {
-            border: none;
-        }
     
     }
   
     .helperText {
-        font-size: 14px;
-        font-family: 'Courier New', Courier, monospace;
-        margin-bottom: 15px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
         margin-right: 10px;
     }
 
