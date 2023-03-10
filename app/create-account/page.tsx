@@ -1,13 +1,19 @@
-import SelectOptions from "@/components/BasicComponents/SelectOptions/SelectOptions";
-import {day, month, year} from './DateData'
+'use client';
+import DetailsPage from "./DetailsPage"
+import PasswordCreate from "./PasswordCreate"
+import {useState} from 'react';
 
 export default function CreateAccount(){
 
+    const [page, setPage] = useState(false)
+
+    const _onClick = () => {
+        setPage(true)
+    }
     return (
-        <div>
-            <SelectOptions data={day}/>
-            <SelectOptions data={month}/>
-            <SelectOptions data={year}/>
-        </div>
+        <>
+            {!page && <DetailsPage onClick={_onClick}/>}
+            {page && <PasswordCreate />}
+        </>
     )
 }
