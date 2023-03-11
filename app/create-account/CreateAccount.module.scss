@@ -30,8 +30,11 @@
 
             .menuWrapper {
                 gap: 5px;
-                margin-right: 5px;
             }
+        }
+
+        .inputWrapper {
+            margin-bottom: 20px;
         }
     }
 
@@ -45,4 +48,5 @@
         flex-direction: column;
     }
    
+
 }

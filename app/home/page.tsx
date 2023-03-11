@@ -1,7 +1,5 @@
-import Post from '@/components/BasicComponents/post/post';
-import Profile from '@/components/BasicComponents/Profile/Profile';
+import Post from '@/components/BasicComponents/Post/Post';
 import styles from './home.module.scss'
-import ContainerLeft from '@/components/BasicComponents/Containers/containerLeft';
 import ContainerRight from '@/components/BasicComponents/Containers/containerRight';
 
 

@@ -1,24 +1,25 @@
-import styles from './post.module.scss'
+import styles from './Post.module.scss';
+import Profile from '../Profile/Profile';
 
 export default function Post() {
 
     return(
     <div className={styles.postContainer}>
-    <div className={styles.attribution}>
-        <div className={styles.postProfile}>
-            <div className={styles.profileAttribute}></div>
-            <label className={styles.postUsername}>Username</label>
+        <div className={styles.attribution}>
+            <div className={styles.postProfile}>
+                <Profile expanded={false}/>
+                <label className={styles.postUsername}>Username</label>
+            </div>
+            <button className={styles.postSettings}>...</button>
         </div>
-        <button className={styles.postSettings}>...</button>
-    </div>
 
-        <span className={styles.postContent}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil eveniet adipisci mollitia debitis, aut iure a veniam quam magnam error quisquam natus accusantium aliquam dolores eius beatae. Sed necessitatibus maxime cumque explicabo perspiciatis exercitationem nobis quam dolorem, autem aperiam cum quidem non inventore sint impedit, accusamus voluptatibus quos eius mollitia corrupti maiores assumenda! Laborum consequuntur dolores dolore id, quos ex corrupti, placeat iste eveniet possimus harum nulla. Architecto maiores earum odit omnis corrupti. Tenetur unde in expedita numquam quia nemo earum fuga, facere commodi tempora nulla tempore itaque ex! Illum maiores corporis fugit magnam veniam sed quam animi officia.</span>
+        <span className={styles.postContent}>I went for a walk today and found that I really hate winter. Like why is it always so cold</span>
         <div className={styles.postIcons}>
-        <p>0</p>
-        <button className={styles.buttonComment}><i className={styles.iconComment}/></button>
-        <p>0</p>
-        <button className={styles.buttonLike}><i className={styles.iconLike}/></button>
-    </div>
+            <p>0</p>
+            <button className={styles.buttonComment}><i className={styles.iconComment}/></button>
+            <p>0</p>
+            <button className={styles.buttonLike}><i className={styles.iconLike}/></button>
+        </div>
     </div>
     )
 }

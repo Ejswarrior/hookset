@@ -1,12 +1,18 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from "next/image"
 import styles from './profile.module.scss';
 import dw from '../../../public/dw.jpg';
 
 interface ProfileProps {
     expanded: boolean;
+    username?: string;
+    profilePic?: StaticImageData;
 }
 export default function Profile(props: ProfileProps) {
-    const {expanded} = props
+    const {
+    expanded,
+    username ='ejswarrior',
+    profilePic = dw,
+    } = props
 
     const profileStyles = [styles.profile]
 
@@ -18,8 +24,8 @@ export default function Profile(props: ProfileProps) {
 
             {expanded && 
                 <div className={styles.usernameGroup}>
-                    <Image className={styles.profilePic} src={dw} alt='Profile Picture' width={30} height={30}/>
-                    <label className={styles.userName}>@Ejswarrior</label>
+                    <Image className={styles.profilePic} src={profilePic} alt='Profile Picture' width={30} height={30}/>
+                    <label className={styles.userName}>@{username}</label>
                 </div>
             }
 
