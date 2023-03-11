@@ -12,41 +12,45 @@ export default function DetailsPage(props: DetailsPageProps) {
     const {onClick} = props
     return (
         <div className={styles.detailsContainer}>
-
-            <h1 className={styles.title}>Create your account</h1>
-        
-            <div className={styles.inputContainer}>
-                <TextInput 
-                    required
-                    type='text'
-                    placeholder='Name'
-                    name='name'
-                    id='name'
-                    maxlength={35}
-                />
-                </div>
-
+            <form className={styles.formContainer}>
+                <div className={styles.innerContainer}>
+                <h1 className={styles.title}>Create your account</h1>
+            
                 <div className={styles.inputContainer}>
                     <TextInput 
                         required
-                        type='email'
-                        placeholder='Email'
-                        name='email'
-                        id='email'
+                        type='text'
+                        placeholder='Name'
+                        name='name'
+                        id='name'
                         maxlength={35}
                     />
+                    </div>
+
+                    <div className={styles.inputContainer}>
+                        <TextInput 
+                            required
+                            type='email'
+                            placeholder='Email'
+                            name='email'
+                            id='email'
+                            maxlength={35}
+                        />
+                    </div>
+                    <div className={styles.datePicker}>
+                        <h2 className={styles.subtitle}>Date of birth</h2>
+                        <p className={styles.disclaimerText}>Your DOB is only used to confirm you are 13 years or old. <br/> This information will not be public</p>
+                        <div>
+                            <SelectOptions data={day}/>
+                            <SelectOptions data={month}/>
+                            <SelectOptions data={year}/>
+                        </div>
+                    </div>
                 </div>
-
-            <h2 className={styles.subtitle}>Date of birth</h2>
-
-            <p className={styles.disclaimerText}>Your DOB is only used to confirm you are 13 years or old. <br/> This information will not be public</p>
-            <div className={styles.dataPicker}>
-                <SelectOptions data={day}/>
-                <SelectOptions data={month}/>
-                <SelectOptions data={year}/>
-            </div>
-
-            <ButtonPrimary onClick={onClick} variation="primary" type="button">Next</ButtonPrimary>
+                <div className={styles.buttonWrapper}>
+                    <ButtonPrimary onClick={onClick} variation="primary" type="button">Next</ButtonPrimary>
+                </div>
+            </form>
         </div>
     )
 }
