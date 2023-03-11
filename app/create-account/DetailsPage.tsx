@@ -40,13 +40,14 @@ export default function DetailsPage(props: DetailsPageProps) {
                     <div className={styles.datePicker}>
                         <h2 className={styles.subtitle}>Date of birth</h2>
                         <p className={styles.disclaimerText}>Your DOB is only used to confirm you are 13 years or old. <br/> This information will not be public</p>
-                        <div>
+                        <div className={styles.menuWrapper}>
                             <SelectOptions data={day}/>
                             <SelectOptions data={month}/>
                             <SelectOptions data={year}/>
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.buttonWrapper}>
                     <ButtonPrimary onClick={onClick} variation="primary" type="button">Next</ButtonPrimary>
                 </div>

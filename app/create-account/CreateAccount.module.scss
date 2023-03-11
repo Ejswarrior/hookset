@@ -27,6 +27,11 @@
             align-items: center;
             justify-content: center;
             margin-top: 48px;
+
+            .menuWrapper {
+                gap: 5px;
+                margin-right: 5px;
+            }
         }
     }
 
@@ -34,13 +39,10 @@
         margin-bottom: 15px;
     }
 
-    .buttonWrapper {
-
-    }
-
     .innerContainer {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
+   
 }
