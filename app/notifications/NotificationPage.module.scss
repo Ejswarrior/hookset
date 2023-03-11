@@ -1,0 +1,22 @@
+@use '../../components/utils.scss' as *;
+
+.container {
+    width: 100%;
+    padding: 20px;
+    scroll-behavior: smooth;
+
+    .titleContainer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        border-bottom: 2px #FFFFFF solid;
+        margin-bottom: 20px;
+
+        .title {
+            @include font-style-large;
+            margin: 0;
+        }
+    }
+}
