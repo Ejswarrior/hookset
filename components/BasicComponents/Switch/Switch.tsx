@@ -1,15 +1,28 @@
+'use client';
+
 import styles from './Switch.module.scss';
+import { useState } from 'react'
 
 interface SwitchProps {
-    checked: boolean;
-    disabled: boolean;
-    
+
+    disabled?: boolean;
+    name?: string;
+    id?: string;
 }
 
-export default function Switch() {
+export default function Switch(props: SwitchProps) {
 
-    <div className={styles.switch}>
-        <input type='checkbox'/>
-        <div className={styles.slider}></div>
-    </div>
+    const [isChecked, setIsChecked] = useState(false);
+
+    const switchStyles = [styles.switch];
+
+    if (isChecked) switchStyles.push(styles.checked)
+
+
+    return (
+        <div className={switchStyles.join(' ')}>
+            <div className={styles.switch}></div>
+            <input className={styles.input} disabled={props.disabled} onChange={(evt: React.ChangeEvent<HTMLInputElement>) => setIsChecked(evt.currentTarget.checked)} type='checkbox'/>
+        </div>
+    )
 }
