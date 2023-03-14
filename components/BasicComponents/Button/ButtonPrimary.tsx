@@ -1,12 +1,12 @@
-import buttonStyles from './button.module.scss';
-import { SurfaceProps } from '@/utils/SharedProps';
+import buttonStyles from "./button.module.scss";
+import { SurfaceProps } from "@/utils/SharedProps";
 
 
 export interface ButtonProps extends SurfaceProps {
     /*
      * Set Button Type
      */
-    type: 'button' | 'reset' | 'submit';
+    type: "button" | "reset" | "submit";
     /*
      * Toggle Disabled state
      */
@@ -18,7 +18,7 @@ export interface ButtonProps extends SurfaceProps {
     /*
     * Change variation of button
     */
-    variation: 'primary' | 'secondary';
+    variation: "primary" | "secondary";
     /*
     * Tab index assigned to button to make it the first tab
     */
@@ -26,30 +26,32 @@ export interface ButtonProps extends SurfaceProps {
     /* 
     onCLick Event handler for the button
     */
-    onClick?: (evt: React.MouseEvent<HTMLButtonElement>) => void;
+    onClick?: ( evt: React.MouseEvent<HTMLButtonElement> ) => void;
 }
 
-export default function ButtonPrimary(props: ButtonProps) {
+export default function ButtonPrimary( props: ButtonProps ) {
 
-    const {type, disabled, children, variation, tabIndex, surface, ...rest} = props;
+	const {
+		type, disabled, children, variation, tabIndex, surface, ...rest
+	} = props;
 
-    const buttonVariation = [buttonStyles.button];
+	const buttonVariation = [buttonStyles.button];
 
-    if (variation === 'secondary') buttonVariation.push(buttonStyles.secondary);
+	if ( variation === "secondary" ) buttonVariation.push( buttonStyles.secondary );
 
-    if (surface === 'dark') buttonVariation.push(buttonStyles.dark);
+	if ( surface === "dark" ) buttonVariation.push( buttonStyles.dark );
 
-    return (
-        <div>
-            <button
-            className={buttonVariation.join(' ')}
-            type={type}
-            disabled={disabled}
-            tabIndex={tabIndex}
-            {...rest}
-            >
-            {children}
-            </button>
-        </div>
-    )
+	return (
+		<div>
+			<button
+				className={buttonVariation.join( " " )}
+				type={type}
+				disabled={disabled}
+				tabIndex={tabIndex}
+				{...rest}
+			>
+				{children}
+			</button>
+		</div>
+	)
 }

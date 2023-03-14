@@ -3,7 +3,7 @@ import TextInput from "@/components/BasicComponents/TextInput/TextInput";
 import Switch from "@/components/BasicComponents/Switch/Switch";
 import Slider from "@/components/BasicComponents/Slider/Slider";
 import SettingTab from "@/components/PageComponents/SettingsTab/SettingsTab";
-import dw from '../../public/dw.jpg';
+import dw from '@/public/dw.jpg';
 
 export default function profile() {
 

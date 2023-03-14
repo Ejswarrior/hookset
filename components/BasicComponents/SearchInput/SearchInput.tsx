@@ -1,5 +1,5 @@
-import { SurfaceProps } from '@/utils/SharedProps';
-import styles from './SearchInput.module.scss'
+import { SurfaceProps } from "@/utils/SharedProps";
+import styles from "./SearchInput.module.scss"
 
 
 interface DataListProps {
@@ -23,39 +23,41 @@ interface SearchInputProps extends SurfaceProps {
     /*Text underneath the input */
     helperText?: string;
     /*Accepts an change event function for input */
-    onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: ( evt: React.ChangeEvent<HTMLInputElement> ) => void;
     /*List of options for the Data list */
     data: string[]
 }
 
 
-export default function SearchInput(props: SearchInputProps) {
+export default function SearchInput( props: SearchInputProps ) {
 
-    const {placeholder, required, id, name, error, onChange, data, dataListId, helperText, surface='light'} = props
+	const {
+		placeholder, required, id, name, error, onChange, data, dataListId, helperText, surface="light"
+	} = props
 
-    const inputStyles = [styles.inputContainer]
+	const inputStyles = [styles.inputContainer]
 
-    if (error) inputStyles.push(styles.error)
+	if ( error ) inputStyles.push( styles.error )
 
-    if (surface === 'dark') inputStyles.push(styles.dark)
+	if ( surface === "dark" ) inputStyles.push( styles.dark )
 
-    return (
-        <div className={inputStyles.join(' ')}>
-            <input
-                placeholder={placeholder}
-                required={required}
-                id={id}
-                name={name}
-                onChange={onChange}
-                className={styles.input}
-                list={dataListId}
-            />
-            {data && <datalist className={styles.dataList} id={dataListId}>
-                {data.map((item) => (
-                    <option value={item}/>
-                ))}
-            </datalist>}
-            {helperText && <label className={styles.helperText}>{helperText}</label>}
-        </div>
-    )
+	return (
+		<div className={inputStyles.join( " " )}>
+			<input
+				placeholder={placeholder}
+				required={required}
+				id={id}
+				name={name}
+				onChange={onChange}
+				className={styles.input}
+				list={dataListId}
+			/>
+			{data && <datalist className={styles.dataList} id={dataListId}>
+				{data.map( ( item ) => (
+					<option value={item}/>
+				) )}
+			</datalist>}
+			{helperText && <label className={styles.helperText}>{helperText}</label>}
+		</div>
+	)
 }

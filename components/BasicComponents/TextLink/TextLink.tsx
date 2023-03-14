@@ -1,6 +1,6 @@
 import { SurfaceProps } from "@/utils/SharedProps";
 import { Url } from "url";
-import styles from './TextLink.module.scss';
+import styles from "./TextLink.module.scss";
 
 export interface TextLinkProps extends SurfaceProps {
     /*
@@ -13,10 +13,10 @@ export interface TextLinkProps extends SurfaceProps {
     children: React.ReactNode;
 }
 
-export default function TextLink(props: TextLinkProps) {
-    const {link, children} = props;
+export default function TextLink( props: TextLinkProps ) {
+	const {link, children} = props;
 
-    return (
-        <a className={styles.textLink} href={link}>{children}</a>
-    )
+	return (
+		<a className={styles.textLink} href={link}>{children}</a>
+	)
 }
