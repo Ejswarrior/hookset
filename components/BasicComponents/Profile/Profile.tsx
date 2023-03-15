@@ -22,15 +22,15 @@ export default function Profile( props: ProfileProps ) {
 
 			{expanded && 
                 <div className={styles.usernameGroup}>
-                	<Image className={styles.profilePic} src={profilePic} alt='Profile Picture' width={30} height={30}/>
-                	<label className={styles.userName}>@{username}</label>
+					<Image className={styles.profilePic} src={profilePic} alt='Profile Picture' width={30} height={30}/>
+					<label className={styles.userName}>@{username}</label>
                 </div>
 			}
 
 
 			{!expanded && 
                 <div className={styles.userExpanded}>
-                	<Image className={styles.profilePic} src={dw} alt='Profile Picture' width={30} height={30}/>
+					<Image className={styles.profilePic} src={dw} alt='Profile Picture' width={30} height={30}/>
                 </div>
 			}
 
