@@ -1,39 +1,74 @@
 {
-  "extends": [
-      "next/core-web-vitals",
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended",
-      "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "jsx-a11y"],
-  "rules": {
-    "quotes": ["error", "double"],
-    "eqeqeq": "error",
-    "no-var": "error",
-    "array-element-newline": ["error", {
-      "ArrayExpression": "consistent",
-      "ArrayPattern": { "minItems": 6 }
-  }],
-  "indent": ["error", "tab"],
-  "space-in-parens": ["error", "always"],
-  "no-multi-spaces": ["error", { "ignoreEOLComments": false }],
-  "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
-  "no-mixed-spaces-and-tabs": "error",
-  "object-curly-newline": ["error", { "minProperties": 6 }],
-  "react/react-in-jsx-scope": "off"
-  },
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:storybook/recommended",
+        "plugin:storybook/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "react",
+        "jsx-a11y"
+    ],
+    "rules": {
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "eqeqeq": "error",
+        "no-var": "error",
+        "array-element-newline": [
+            "error",
+            {
+                "ArrayExpression": "consistent",
+                "ArrayPattern": {
+                    "minItems": 6
+                }
+            }
+        ],
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "space-in-parens": [
+            "error",
+            "always"
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": false
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxEOF": 0
+            }
+        ],
+        "no-mixed-spaces-and-tabs": "error",
+        "object-curly-newline": [
+            "error",
+            {
+                "minProperties": 6
+            }
+        ],
+        "react/react-in-jsx-scope": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
     }
-  },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  }
 }
