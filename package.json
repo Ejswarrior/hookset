@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint \"components/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint \"components/**/*.{ts,tsx}\" --fix"
+    "lint:fix": "eslint \"components/**/**.{ts,tsx}\" --fix"
     
   },
   "dependencies": {
