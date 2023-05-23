@@ -1,0 +1,34 @@
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR! 
+npm ERR! While resolving: react-google-maps@9.4.5
+npm ERR! Found: @types/react@18.0.27
+npm ERR! node_modules/@types/react
+npm ERR!   @types/react@"*" from @types/google-map-react@2.1.7
+npm ERR!   node_modules/@types/google-map-react
+npm ERR!     dev @types/google-map-react@"^2.1.7" from the root project
+npm ERR!   @types/react@"*" from @types/react-dom@18.0.10
+npm ERR!   node_modules/@types/react-dom
+npm ERR!     @types/react-dom@"18.0.10" from the root project
+npm ERR!   2 more (the root project, @mdx-js/react)
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer @types/react@"^15.0.0 || ^16.0.0" from react-google-maps@9.4.5
+npm ERR! node_modules/react-google-maps
+npm ERR!   react-google-maps@"^9.4.5" from the root project
+npm ERR! 
+npm ERR! Conflicting peer dependency: @types/react@16.14.41
+npm ERR! node_modules/@types/react
+npm ERR!   peer @types/react@"^15.0.0 || ^16.0.0" from react-google-maps@9.4.5
+npm ERR!   node_modules/react-google-maps
+npm ERR!     react-google-maps@"^9.4.5" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! See C:\Users\wowfa\AppData\Local\npm-cache\eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\wowfa\AppData\Local\npm-cache\_logs\2023-05-23T01_09_20_116Z-debug-0.log

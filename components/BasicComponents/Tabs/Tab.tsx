@@ -1,6 +1,6 @@
 import styles from './Tabs.module.scss';
 
-interface TabProps {
+export interface TabProps {
     /**
      * Title for the tab
      */
@@ -26,6 +26,7 @@ export default function Tab(props: TabProps) {
         <div className={tabStyles.join(' ')}>
             <div className={styles.tab}>
                 <p className={styles.tabTitle}>{title}</p>
+                <div className={styles.tabLine} />
             </div>
 
             <div className={styles.tabContent}>
