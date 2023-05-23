@@ -12,6 +12,7 @@ type Story = StoryObj<typeof SelectSearch>;
 export const Primary: Story = {
   args: {
     placeholder: 'Select',
+    label: 'Select',
     data: [
         {name: 'Erik'},
         {name: 'Erik'},

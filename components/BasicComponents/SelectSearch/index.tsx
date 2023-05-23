@@ -6,13 +6,18 @@ interface SelectSearchProps {
      * placeholder for the select
      */
     placeholder: string
+    /**
+     * Label for input
+     */
+    label: string
 }
 
 interface data {
     name: string;
 }
+
 export default function SelectSearch(props: SelectSearchProps) {
-    const {data, placeholder} = props
+    const {data, placeholder, label} = props
     const [selectValue, setSelectValue] = useState<string>('')
     const [isFocused, setIsFocused] = useState<boolean>(false)
     const selectStyles = [styles.selectContainer];
@@ -34,6 +39,7 @@ export default function SelectSearch(props: SelectSearchProps) {
 
     return (
         <div className={selectStyles.join(' ')}>
+            {label && <label>{label}</label>}
             <input 
                 placeholder={placeholder}
                 value={selectValue}
@@ -49,7 +55,7 @@ export default function SelectSearch(props: SelectSearchProps) {
                         return <div onClick={() => setSelectValue(item.name)}>{item.name}</div>
                     }
                 })}
-                    {!dataArray && <div>No Results Found.</div>}
+                {!dataArray && <div>No Results Found.</div>}
             </div>}
         </div>
     )
