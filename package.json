@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint \"components/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"components/**/*.{ts,tsx}\" --fix",
-    "lint:all:fix": "eslint --fix"
+    "lint:all:fix": "eslint --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -21,16 +23,22 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-google-maps": "^9.4.5",
     "sass": "^1.57.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@types/google-map-react": "^2.1.7",
+    "@storybook/addon-essentials": "^7.0.13",
+    "@storybook/addon-interactions": "^7.0.13",
+    "@storybook/addon-links": "^7.0.13",
+    "@storybook/blocks": "^7.0.13",
+    "@storybook/nextjs": "^7.0.13",
+    "@storybook/react": "^7.0.13",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2"
+    "eslint-plugin-react": "^7.32.2",
+    "storybook": "^7.0.13"
   }
 }
