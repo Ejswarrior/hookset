@@ -28,7 +28,7 @@ export default function SettingTab(props: TabProps) {
                 </div>
             </div>
 
-            <div className={styles.iconArrow}> > </div>
+            <div className={styles.iconArrow}> {'>'} </div>
         </div>
     )
 }
