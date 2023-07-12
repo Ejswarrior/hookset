@@ -18,11 +18,11 @@
 }
 
 
-@mixin font-style-bold {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-}
+    @mixin font-style-bold {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+    }
 
 @mixin font-style-large {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

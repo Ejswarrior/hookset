@@ -27,3 +27,8 @@ to show what fish are where and when.
     npm install
 
     npm run dev
+    
+## Scirpts
+    
+    lint: Runs Component Package Lint
+    lint:fix Runs Component Package Lint

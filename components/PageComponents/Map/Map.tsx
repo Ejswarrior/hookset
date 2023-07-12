@@ -14,6 +14,7 @@ export default function Map() {
 			zoom={12}
 			mapContainerClassName={styles.mapContainer}
 		>
+			
 		</GoogleMap>
 	)
 }
