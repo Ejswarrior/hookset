@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hookset-dev-224113-authRole",
+      "UnauthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224113-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224113-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-hookset-dev-224113-deployment",
+      "UnauthRoleName": "amplify-hookset-dev-224113-unauthRole",
+      "StackName": "amplify-hookset-dev-224113",
+      "StackId": "arn:aws:cloudformation:us-east-2:397986144571:stack/amplify-hookset-dev-224113/b79b6a40-25dd-11ee-b767-0acc4e578b63",
+      "AmplifyAppId": "dkfqni5zwxrvx"
+    }
+  }
+}
