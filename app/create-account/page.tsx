@@ -28,11 +28,39 @@ export function CreateAccount(){
         <div className={styles.createAccountContainer}>
             <form className={styles.formContainer}>
                 <TextInput 
-                type="email"
-                placeholder='johndoe@gmail.com'
-                id='email'
+                type="text"
+                placeholder='John'
+                id='firstName'
                 required
+                value={signUpData.firstName}
                 onChange={(evt: React.ChangeEvent<HTMLInputElement>) => _onChange(evt)}
+                />
+
+<TextInput 
+                type="text"
+                placeholder='Doe'
+                id='lastName'
+                required
+                value={signUpData.lastName}
+                onChange={(evt: React.ChangeEvent<HTMLInputElement>) => _onChange(evt)}
+                />
+
+                <TextInput 
+                    type="email"
+                    placeholder='johndoe@gmail.com'
+                    id='email'
+                    required
+                    value={signUpData.email}
+                    onChange={(evt: React.ChangeEvent<HTMLInputElement>) => _onChange(evt)}
+                />
+
+                <TextInput 
+                    type="text"
+                    placeholder='08/17/2021'
+                    id='dob'
+                    required
+                    value={signUpData.email}
+                    onChange={(evt: React.ChangeEvent<HTMLInputElement>) => _onChange(evt)}
                 />
 
             </form>
