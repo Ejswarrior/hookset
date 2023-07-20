@@ -1,15 +1,15 @@
 {
-  "dev": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-hookset-dev-224113-authRole",
-      "UnauthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224113-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224113-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-hookset-dev-224113-deployment",
-      "UnauthRoleName": "amplify-hookset-dev-224113-unauthRole",
-      "StackName": "amplify-hookset-dev-224113",
-      "StackId": "arn:aws:cloudformation:us-east-2:397986144571:stack/amplify-hookset-dev-224113/b79b6a40-25dd-11ee-b767-0acc4e578b63",
-      "AmplifyAppId": "dkfqni5zwxrvx"
+      "AuthRoleName": "amplify-hookset-staging-01054-authRole",
+      "UnauthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-staging-01054-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-staging-01054-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hookset-staging-01054-deployment",
+      "UnauthRoleName": "amplify-hookset-staging-01054-unauthRole",
+      "StackName": "amplify-hookset-staging-01054",
+      "StackId": "arn:aws:cloudformation:us-east-1:397986144571:stack/amplify-hookset-staging-01054/baddd090-25c8-11ee-a57a-0e7363cad529",
+      "AmplifyAppId": "dj3p00j2j8wp9"
     }
   }
 }
