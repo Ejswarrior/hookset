@@ -28,6 +28,15 @@ $-hookset-disabled-color-onlight: rgb(133, 129, 129);
         margin-right: 10px;
     }
 
+    .errorText {
+        color: $-hookset-error-color-ondark;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
     &:invalid {
         border: 1px $-hookset-error-color-ondark solid;
 
@@ -46,9 +55,6 @@ $-hookset-disabled-color-onlight: rgb(133, 129, 129);
     &.error {
         border: 1px $-hookset-error-color-ondark solid;
 
-        .helperText {
-            color: $-hookset-error-color-ondark
-        }
     }
 
     &.disabled {

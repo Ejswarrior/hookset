@@ -13,6 +13,7 @@ interface TextInputProps extends SurfaceProps{
     maxlength?: number;
 	value: string;
     onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+	errorText?: string;
 }
 export default function TextInput( props: TextInputProps ) {
 
@@ -27,7 +28,8 @@ export default function TextInput( props: TextInputProps ) {
 		error, 
 		onChange,
 		value,
-		surface = "light"
+		surface = "light",
+		errorText
 	} = props
 
 	const inputs = [inputStyles.inputContainer]
@@ -52,6 +54,7 @@ export default function TextInput( props: TextInputProps ) {
 				onChange={onChange}
 				className={inputStyles.textInput}
 			/>
+			{errorText && error && <label className={inputStyles.errorText}>{errorText}</label>}
 		</div>
 	)
 }
