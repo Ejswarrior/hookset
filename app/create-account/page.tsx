@@ -5,6 +5,12 @@ import styles from './CreateAccount.module.scss'
 import TextInput from '@/components/BasicComponents/TextInput/TextInput';
 import ButtonPrimary from '@/components/BasicComponents/Button/ButtonPrimary';
 import { useRouter } from 'next/navigation';
+import { Amplify } from 'aws-amplify';
+import awsExports from '../../src/aws-exports'
+
+Amplify.configure({awsExports, ssr: true})
+Auth.configure(awsExports);
+
 
 interface SignInType {
     firstName: string;
@@ -32,6 +38,7 @@ export function CreateAccount(){
         setSignUpData({
             ...signUpData,
             [evt.target.id]: evt.target.value
+            
         })
     }
 
@@ -47,13 +54,15 @@ export function CreateAccount(){
         }
 
 
+
+
         Auth.signUp({
             username: signUpData.email,
             password: signUpData.password,
             attributes: {
-              email: signUpData.email,
-              name: `${signUpData.firstName} ${signUpData.lastName}`,
-            }
+                email: signUpData.email,
+                name: `${signUpData.firstName} ${signUpData.lastName}`,
+              }
         }).then((result) => {
             console.log(result)
             router.push('/home')
