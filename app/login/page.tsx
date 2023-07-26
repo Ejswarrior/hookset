@@ -4,23 +4,59 @@ import TextInput from "@/components/BasicComponents/TextInput/TextInput";
 import loginStyles from './login.module.scss';
 import ButtonPrimary from "@/components/BasicComponents/Button/ButtonPrimary";
 import TextLink from "@/components/BasicComponents/TextLink/TextLink";
+import AWSexport from '../../src/aws-exports'
+import { Amplify, Auth } from "aws-amplify";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+Amplify.configure(AWSexport)
+Auth.configure(AWSexport)
 
 export default function LoginPage() {
+    const router = useRouter()
+    const [loginInfo, setLoginInfo] = useState({
+        email: '',
+        password: ''
+    })
+
+    const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+        setLoginInfo({
+            ...loginInfo,
+            [evt.target.id]: evt.target.value
+        })
+    }
+
+    const onSubmit = () => {
+        Auth.signIn({
+            username: loginInfo.email,
+            password: loginInfo.password
+        }).then((result) => {
+            console.log(result)
+            router.push('/home')
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+    }
+
     return (
         <div className={loginStyles.login}> 
             <form className={loginStyles.formContainer}>
                 <div className={loginStyles.innerContainer}>
                     <h1 className={loginStyles.title}>Hookset</h1>
                     <div className={loginStyles.emailInput}>
+                        <div className={loginStyles.inputWrapper}>
                         <TextInput 
                             required
                             type='email'
                             helperText="Enter in your email."
                             placeholder='Email'
-                            name='textinput'
-                            id='textinput'
+                            name='Email Input'
+                            id='email'
+                            value={loginInfo.email}
                             maxlength={35}
                         />
+                        </div>
                     </div>
 
                     <div className={loginStyles.passwordInput}>
@@ -29,8 +65,9 @@ export default function LoginPage() {
                             type='password'
                             helperText="Enter in your password."
                             placeholder='Password.'
-                            name='textinput'
-                            id='textinput'
+                            name='Password Input'
+                            id='password'
+                            value={loginInfo.password}
                             maxlength={35}
                         />
                         <TextLink link='./google'>Reset your password</TextLink>
