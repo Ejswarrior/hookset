@@ -12,7 +12,16 @@ export default function Home(){
     }
 
     const onSubmit = async () => {
-        console.log(postContent)
+        await fetch('http://localhost:8020/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                content: postContent,
+            })
+        })
     }
     return(
         <div className={styles.homeWrapper}>
