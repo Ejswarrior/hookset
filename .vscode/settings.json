@@ -23,5 +23,13 @@
   "eslint.autoFixOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+    "auto-close-tag.activationOnLanguage": [
+        "html",
+        "xml",
+        "javascript",
+        "javascriptreact",
+        "typescriptreact"
+    ]
+}
 }

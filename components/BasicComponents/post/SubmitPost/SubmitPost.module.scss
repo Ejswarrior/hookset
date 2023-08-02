@@ -1,0 +1,22 @@
+.submitPostContainer {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .postInput {
+        width: 100%;
+        padding: 10px;
+        height: 280px
+    }
+
+    .postBar {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-self: flex-end;
+    }
+}

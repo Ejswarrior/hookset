@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id String @default(uuid()) @id
+}
+
 model Post {
-  id  int @id default(autoincrement())
+  id String @default(uuid()) @id
+  content String
 }

@@ -6,7 +6,7 @@ export interface ButtonProps extends SurfaceProps {
     /*
      * Set Button Type
      */
-    type: "button" | "reset" | "submit";
+    type?: "button" | "reset" | "submit";
     /*
      * Toggle Disabled state
      */
@@ -18,7 +18,7 @@ export interface ButtonProps extends SurfaceProps {
     /*
     * Change variation of button
     */
-    variation: "primary" | "secondary";
+    variation?: "primary" | "secondary";
     /*
     * Tab index assigned to button to make it the first tab
     */
@@ -32,7 +32,7 @@ export interface ButtonProps extends SurfaceProps {
 export default function ButtonPrimary( props: ButtonProps ) {
 
 	const {
-		type, disabled, children, variation, tabIndex, surface, ...rest
+		type = 'button', disabled, children, variation = 'primary', tabIndex, surface, ...rest
 	} = props;
 
 	const buttonVariation = [buttonStyles.button];

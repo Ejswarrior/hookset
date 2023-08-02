@@ -1,20 +1,29 @@
-import Post from '@/components/BasicComponents/Post/Post';
+'use client';
 import styles from './home.module.scss'
 import ContainerRight from '@/components/BasicComponents/Containers/containerRight';
-import Link from 'next/link';
+import SubmitPost from '@/components/BasicComponents/Post/SubmitPost';
+import {useState} from 'react';
 
+export default function Home(){   
+    const [postContent, setPostContent] = useState<string>('');
 
-export async function Home(){
+    const _onChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setPostContent(evt.target.value)
+    }
+
+    const onSubmit = async () => {
+        console.log(postContent)
+    }
     return(
         <div className={styles.homeWrapper}>
             <div className={styles.containerMiddle}>
                 <div className={styles.feedSticky}>
-                    <Link href='/map'><h1>Map</h1></Link>
                 </div>
-                <div className={styles.post}><Post/></div>
+                <div className={styles.post}>
+                    <SubmitPost onChange={_onChange} value={postContent} onSubmit={onSubmit}/>
+                </div>
             </div>
             <ContainerRight/>
         </div>
     )
 }
-export default Home;

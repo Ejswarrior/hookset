@@ -26,13 +26,12 @@ export default function LoginPage() {
         })
     }
 
-    const onSubmit = () => {
-        Auth.signIn({
-            username: loginInfo.email,
-            password: loginInfo.password
-        }).then((result) => {
+    const onSubmit = async () => {
+        await Auth.signIn(
+             loginInfo.email,
+             loginInfo.password
+        ).then((result) => {
             console.log(result)
-            router.push('/home')
         })
         .catch((err) => {
             console.error(err)
@@ -54,6 +53,7 @@ export default function LoginPage() {
                             name='Email Input'
                             id='email'
                             value={loginInfo.email}
+                            onChange={onChange}
                             maxlength={35}
                         />
                         </div>
@@ -64,10 +64,11 @@ export default function LoginPage() {
                             required
                             type='password'
                             helperText="Enter in your password."
-                            placeholder='Password.'
+                            placeholder='Password'
                             name='Password Input'
                             id='password'
                             value={loginInfo.password}
+                            onChange={onChange}
                             maxlength={35}
                         />
                         <TextLink link='./google'>Reset your password</TextLink>
@@ -75,7 +76,7 @@ export default function LoginPage() {
                 </div>
 
                 <div className={loginStyles.buttonContainer}>
-                    <ButtonPrimary tabIndex={0} variation='primary' type='submit' onClick={() => console.log('Clicked')}>Submit</ButtonPrimary>
+                    <ButtonPrimary tabIndex={0} variation='primary' type='submit' onClick={onSubmit}>Submit</ButtonPrimary>
                     <ButtonPrimary tabIndex={0} variation='secondary' type='submit' onClick={() => console.log('Clicked')}>Create Account</ButtonPrimary>
                 </div>
             </form>
