@@ -2,27 +2,39 @@
 import styles from './home.module.scss'
 import ContainerRight from '@/components/BasicComponents/Containers/containerRight';
 import SubmitPost from '@/components/BasicComponents/Post/SubmitPost';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+import { ApiService } from '@/Services/ApiService';
+import Post from '@/components/BasicComponents/Post/Post';
 
 export default function Home(){   
     const [postContent, setPostContent] = useState<string>('');
+    const [posts, setPosts] = useState()
 
     const _onChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPostContent(evt.target.value)
     }
 
     const onSubmit = async () => {
-        await fetch('http://localhost:8020/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                content: postContent,
-            })
+        const res = await new ApiService().createPost({
+            content: postContent
         })
+
+        console.log('hits')
+        console.log(res)
     }
+
+
+    const getPosts = async () => {
+        const res = await new ApiService().getPost()
+        console.log(res)
+        setPosts(res)
+    }
+
+    useEffect(() => {
+        console.log('hit')
+        getPosts()
+    }, [])
+
     return(
         <div className={styles.homeWrapper}>
             <div className={styles.containerMiddle}>
@@ -30,6 +42,14 @@ export default function Home(){
                 </div>
                 <div className={styles.post}>
                     <SubmitPost onChange={_onChange} value={postContent} onSubmit={onSubmit}/>
+                </div>
+
+                <div className={styles.postsContainer}>
+                    {
+                        posts && posts.map((item) => {
+                            return <Post content={item.content}/>
+                        })
+                    }
                 </div>
             </div>
             <ContainerRight/>
