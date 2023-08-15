@@ -21,7 +21,6 @@ export default function SubmitPost(props: SubmitPostProps) {
                 id={id || ''}
                 className={styles.postInput}
             >
-
             </textarea>
 
             <div className={styles.postBar}>

@@ -1,6 +1,7 @@
 import styles from './Post.module.scss';
 import Profile from '../Profile/Profile';
 import ButtonPrimary from '../Button/ButtonPrimary';
+import DropDownList, { DropDownListProps } from '../DropDownList/DropDownList';
 
 interface PostProps {
     /**
@@ -19,8 +20,20 @@ interface PostProps {
      * Event handler for submitting the post
      */
 }
+
 export default function Post(props: PostProps) {
-    const {content, likeCount = 0, commentCount = 0} = props
+    const {content, likeCount = 0, commentCount = 0} = props;
+
+    const dropDownListItems = [
+        {
+            title: 'Update',
+            onClick: () => console.log('Update'),
+        },
+        {
+            title: 'Delete',
+            onClick: () => console.log('Delete')
+        }
+    ]
     return(
     <div className={styles.postContainer}>
         <div className={styles.attribution}>
@@ -28,20 +41,16 @@ export default function Post(props: PostProps) {
                 <Profile expanded={false}/>
                 <label className={styles.postUsername}>Username</label>
             </div>
-            <button className={styles.postSettings}>...</button>
+            <DropDownList listItems={dropDownListItems}/>
         </div>
 
         <span className={styles.postContent}>{content}</span>
-        <div className={styles.bottonContainer}>
             <div className={styles.postIcons}>
                 <p>{likeCount}</p>
                 <button className={styles.buttonComment}><i className={styles.iconComment}/></button>
-                <p>commentCount</p>
+                <p>{commentCount}</p>
                 <button className={styles.buttonLike}><i className={styles.iconLike}/></button>
             </div>
-            <div className={styles.buttonContainer}>
-            </div>
-        </div>
     </div>
     )
 }

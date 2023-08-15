@@ -14,7 +14,14 @@ model User {
   id String @default(uuid()) @id
 }
 
-model Post {
+
+model Comments {
   id String @default(uuid()) @id
   content String
 }
+
+model Post {
+  id String @default(uuid()) @id
+  content String
+  likes Int @default(0)
+  }
