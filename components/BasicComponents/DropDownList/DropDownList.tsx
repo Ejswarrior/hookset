@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 import styles from './DropDownList.module.scss';
 
 export interface DropDownListProps {
@@ -11,25 +11,37 @@ interface DropDownListItem {
     onClick: () => void;
 }
 
+const useClickOutside = (ref: React.RefObject<HTMLDivElement>, onClickOutside: () => void) => {
+    useEffect(() => {
+        const handleClickOutside = (evt: MouseEvent) => {
+            if(ref.current && evt.target && !ref.current.contains(evt.target as Node)) {
+                onClickOutside()
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return() => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, [ref, onClickOutside])
+}
+
 export default function DropDownList(props: DropDownListProps) {
     const { listItems} = props
     const dropDownRef = useRef(null)
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
-    const onClose = (evt: React.MouseEvent) => {
-        if(dropDownRef.current && dropDownRef.current.contains(evt.target)) {
-            setIsOpen(!isOpen)
-        }
+    const onClose = () => {
+            setIsOpen(false)
     }
 
-    useEffect(() => {
-        onClose()
-    }, [])
+    useClickOutside(dropDownRef, onClose)
 
     return (
-        <div ref={dropDownRef} onClick={onClose} className={styles.dropDownContainer} >
-                <div onClick={() => setIsOpen(!isOpen)}>
+        <div ref={dropDownRef} className={styles.dropDownContainer} >
+                <div onClick={() => setIsOpen(true)}>
                     ...
                 </div>
                 {isOpen && (

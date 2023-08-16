@@ -17,6 +17,7 @@ postRouter.post('/', async (req: Request, res: Response) => {
         data: {
             content: content,
             likes: 0,
+            userId: userId
         }
     })
     res.json(newPost)

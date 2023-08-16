@@ -10,18 +10,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id String @default(uuid()) @id
-}
-
-
 model Comments {
   id String @default(uuid()) @id
   content String
+}
+
+
+model User {
+  id String @default(uuid()) @id
+  cognitoId String @unique
+  userName String @unique
+  Posts Post[]
 }
 
 model Post {
   id String @default(uuid()) @id
   content String
   likes Int @default(0)
-  }
+  user User    @relation(fields: [userId], references: [cognitoId])
+  userId String @unique
+}
+

@@ -6,7 +6,7 @@ import ButtonPrimary from "@/components/BasicComponents/Button/ButtonPrimary";
 import TextLink from "@/components/BasicComponents/TextLink/TextLink";
 import AWSexport from '../../src/aws-exports'
 import { Amplify, Auth } from "aws-amplify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 Amplify.configure(AWSexport)
@@ -37,6 +37,21 @@ export default function LoginPage() {
             console.error(err)
         })
     }
+
+  const getAuthenticatedUser = async ()  => {
+    try {
+      const user = await Auth.currentAuthenticatedUser()
+      console.log(user)
+    }
+    catch(err) {
+      console.error(err)
+    }
+  }
+
+  useEffect(() => {
+    getAuthenticatedUser()
+
+  }, [])
 
     return (
         <div className={loginStyles.login}> 

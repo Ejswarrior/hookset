@@ -53,9 +53,6 @@ export function CreateAccount(){
             return
         }
 
-
-
-
         Auth.signUp({
             username: signUpData.email,
             password: signUpData.password,
@@ -65,7 +62,6 @@ export function CreateAccount(){
               }
         }).then((result) => {
             console.log(result)
-            router.push('/home')
         })
         .catch((error) => {
             setIsError(true)

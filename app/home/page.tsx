@@ -24,15 +24,14 @@ export default function Home(){
     }
 
 
-    const getPosts = async () => {
-        const res = await new ApiService().getPost()
-        console.log(res)
-        setPosts(res)
-    }
+    // const getPosts = async () => {
+    //     const res = await new ApiService().getPost()
+    //     console.log(res)
+    //     setPosts(res)
+    // }
 
     useEffect(() => {
         console.log('hit')
-        getPosts()
     }, [])
 
     return(
