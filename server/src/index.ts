@@ -3,6 +3,7 @@ import { config } from 'dotenv'
 import bodyParser from 'body-parser'
 import postRouter from './controllers/postController.js'
 import cors from 'cors'
+import authRouter from './controllers/AuthController.js'
 
 const app = express()
 
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/posts', postRouter)
+app.use('/auth', authRouter)
 
 app.listen(processEnv.PORT, () => {
     console.log('server running')

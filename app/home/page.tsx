@@ -5,6 +5,11 @@ import SubmitPost from '@/components/BasicComponents/Post/SubmitPost';
 import {useEffect, useState} from 'react';
 import { ApiService } from '@/Services/ApiService';
 import Post from '@/components/BasicComponents/Post/Post';
+import AWSexport from '../../src/aws-exports'
+import { Amplify, Auth } from "aws-amplify";
+Auth.configure({Auth: AWSexport})
+
+
 
 export default function Home(){   
     const [postContent, setPostContent] = useState<string>('');
@@ -29,6 +34,15 @@ export default function Home(){
     //     console.log(res)
     //     setPosts(res)
     // }
+
+    const getAuthenticatedUser = async ()  => {
+        const user = await Auth.currentAuthenticatedUser()
+        console.log(user)
+    }
+  
+    useEffect(() => {
+      getAuthenticatedUser()
+    }, [])
 
     useEffect(() => {
         console.log('hit')

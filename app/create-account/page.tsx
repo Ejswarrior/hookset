@@ -6,25 +6,14 @@ import TextInput from '@/components/BasicComponents/TextInput/TextInput';
 import ButtonPrimary from '@/components/BasicComponents/Button/ButtonPrimary';
 import { useRouter } from 'next/navigation';
 import { Amplify } from 'aws-amplify';
-import awsExports from '../../src/aws-exports'
-
-Amplify.configure({awsExports, ssr: true})
-Auth.configure(awsExports);
-
-
-interface SignInType {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;  
-    confirmPassword: string;
-}
+import { CreateUser } from '@/pages/api/Interfaces/CreateUser.interface';
+import ApiService from '@/Services/ApiService';
 
 export function CreateAccount(){
     const [page, setPage] = useState(false)
-    const [signUpData, setSignUpData] = useState<SignInType>({
+    const [signUpData, setSignUpData] = useState<CreateUser & {confirmPassword: string}>({
         firstName: '',
-        lastName: '',
+        userName: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -53,20 +42,13 @@ export function CreateAccount(){
             return
         }
 
-        Auth.signUp({
-            username: signUpData.email,
-            password: signUpData.password,
-            attributes: {
-                email: signUpData.email,
-                name: `${signUpData.firstName} ${signUpData.lastName}`,
-              }
-        }).then((result) => {
-            console.log(result)
+        const res = await ApiService.createAccount({
+            userName: signUpData.userName,
+            firstName: signUpData.firstName,
+            email: signUpData.email,
+            password: signUpData.password
         })
-        .catch((error) => {
-            setIsError(true)
-            setErrorMessage(error)
-        })
+        console.log(res)
     }
 
     return (
@@ -89,10 +71,10 @@ export function CreateAccount(){
                 <div className={styles.inputWrapper}>
                     <TextInput 
                         type="text"
-                        placeholder='Doe'
-                        id='lastName'
+                        placeholder='username'
+                        id='userName'
                         required
-                        value={signUpData.lastName}
+                        value={signUpData.userName}
                         onChange={(evt: React.ChangeEvent<HTMLInputElement>) => _onChange(evt)}
                     />
                 </div>

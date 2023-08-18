@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 Amplify.configure(AWSexport)
-Auth.configure(AWSexport)
+Auth.configure({Auth: AWSexport})
 
 export default function LoginPage() {
     const router = useRouter()
@@ -26,32 +26,17 @@ export default function LoginPage() {
         })
     }
 
-    const onSubmit = async () => {
+    const onSubmit = async (evt: React.MouseEvent<HTMLButtonElement>) => {
         await Auth.signIn(
              loginInfo.email,
              loginInfo.password
         ).then((result) => {
-            console.log(result)
+            router.push('/home')
         })
         .catch((err) => {
             console.error(err)
         })
     }
-
-  const getAuthenticatedUser = async ()  => {
-    try {
-      const user = await Auth.currentAuthenticatedUser()
-      console.log(user)
-    }
-    catch(err) {
-      console.error(err)
-    }
-  }
-
-  useEffect(() => {
-    getAuthenticatedUser()
-
-  }, [])
 
     return (
         <div className={loginStyles.login}> 
