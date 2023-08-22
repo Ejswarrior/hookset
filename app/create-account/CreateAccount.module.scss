@@ -1,15 +1,15 @@
-.detailsContainer {
+.createAccountContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    border: 1px solid white;
 
     .formContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
         height: 550px;
         width: 500px;
         border-radius: 16px;

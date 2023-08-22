@@ -10,13 +10,26 @@ interface TextInputProps extends SurfaceProps{
     helperText?: string;
     disabled?: boolean;
     error?: boolean;
-    maxlength: number;
-    onChange?: () => void;
+    maxlength?: number;
+	value: string;
+    onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+	errorText?: string;
 }
 export default function TextInput( props: TextInputProps ) {
 
 	const {
-		type, placeholder, name, id, required, helperText, disabled, error, onChange, surface = "light"
+		type, 
+		placeholder, 
+		name, 
+		id, 
+		required, 
+		helperText, 
+		disabled, 
+		error, 
+		onChange,
+		value,
+		surface = "light",
+		errorText
 	} = props
 
 	const inputs = [inputStyles.inputContainer]
@@ -37,9 +50,11 @@ export default function TextInput( props: TextInputProps ) {
 				name={name}
 				id={id}
 				required={required}
+				value={value}
 				onChange={onChange}
 				className={inputStyles.textInput}
 			/>
+			{errorText && error && <label className={inputStyles.errorText}>{errorText}</label>}
 		</div>
 	)
 }

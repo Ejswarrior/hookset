@@ -9,3 +9,26 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Comments {
+  id String @default(uuid()) @id
+  content String
+}
+
+
+model User {
+  id String @default(uuid()) @id
+  userName String @unique
+  firstName String
+  password String
+  email String @unique
+  Posts Post[]
+}
+
+model Post {
+  id String @default(uuid()) @id
+  content String
+  likes Int @default(0)
+  user User @relation(fields: [userId], references: [userName])
+  userId String
+}

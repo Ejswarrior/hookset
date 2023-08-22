@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hookset-dev-224125-authRole",
+      "UnauthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224125-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-dev-224125-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-hookset-dev-224125-deployment",
+      "UnauthRoleName": "amplify-hookset-dev-224125-unauthRole",
+      "StackName": "amplify-hookset-dev-224125",
+      "StackId": "arn:aws:cloudformation:us-east-2:397986144571:stack/amplify-hookset-dev-224125/401ec7b0-2839-11ee-9497-0a2ff48ddfb3",
+      "AmplifyAppId": "dwvpbaro66re"
+    }
+  },
+  "hookset": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hookset-hookset-224333-authRole",
+      "UnauthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-hookset-224333-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::397986144571:role/amplify-hookset-hookset-224333-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-hookset-hookset-224333-deployment",
+      "UnauthRoleName": "amplify-hookset-hookset-224333-unauthRole",
+      "StackName": "amplify-hookset-hookset-224333",
+      "StackId": "arn:aws:cloudformation:us-east-2:397986144571:stack/amplify-hookset-hookset-224333/8c90c990-2839-11ee-96e4-0a84752997b7",
+      "AmplifyAppId": "dwvpbaro66re"
+    },
+    "categories": {
+      "auth": {
+        "hookset9834d27a": {}
+      }
+    }
+  }
+}
