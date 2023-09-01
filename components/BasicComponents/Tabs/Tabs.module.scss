@@ -1,0 +1,15 @@
+.tabs {
+    display: flex;
+    overflow-y: auto;
+    border-bottom: 1px solid black;
+}
+
+.tabContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 38px;
+    background-color: blue;
+    border: 1px solid white;
+}

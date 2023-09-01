@@ -3,39 +3,24 @@ import './global.scss'
 import styles from './home.module.scss'
 import ContainerLeft from '@/components/BasicComponents/Containers/containerLeft';
 import ContainerRight from '@/components/BasicComponents/Containers/containerRight';
-// import awsExports from '../src/aws-exports'
-// import { Amplify } from 'aws-amplify';
-// import {Auth} from 'aws-amplify'
-
-
-// Amplify.configure({awsExports, ssr: true})
-// Auth.configure(awsExports);
+import { StrictMode } from 'react';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-
-  // const getAuthenticatedUser = async ()  => {
-  //   try {
-  //     const user = await Auth.currentAuthenticatedUser()
-  //     console.log(user)
-  //   }
-  //   catch(err) {
-  //     console.error(err)
-  //   }
-  // }
-
-  // getAuthenticatedUser()
-
   return (
     <html lang="en">
       <head />
-      <body className={styles.container}>
-        <ContainerLeft/>
-        {children}
-        </body>
+      <StrictMode>
+        <body className={styles.container}>
+          <ContainerLeft/>
+            <div className={styles.childContainer}>
+              {children}
+            </div>
+          </body>
+        </StrictMode>
     </html>
   )
 }

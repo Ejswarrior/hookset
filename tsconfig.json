@@ -21,7 +21,13 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@BasicComponents/*": ["./components/BasicComponents/*"],
+      "@PageComponents/*": ["./components/PageComponents/*"],
+      "@services/*": ["./Services/*"],
+      "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./Hooks/*"],
+      "@server/*": ["./server/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/BasicComponents/SearchInput"],
