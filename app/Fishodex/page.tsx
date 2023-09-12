@@ -64,6 +64,16 @@ export default function Fishodex() {
                {selectedTab === '1' &&  <div>
                     hello
                 </div>}
+
+                
+               {selectedTab === '2' &&  <div>
+                    hello
+                </div>}
+
+                
+               {selectedTab === '3' &&  <div>
+                    hello
+                </div>}
             </div>
         </div>
     )

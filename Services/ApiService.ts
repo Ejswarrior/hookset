@@ -8,15 +8,15 @@ export class ApiService {
         this.http = new Http()
     }
 
-    public async getPost () {
+    async getPost () {
         return this.http.get('/posts')
     }
 
-    public async createPost (data) {
+    async createPost (data) {
         return this.http.Post('/posts', data)
     }
 
-    public async createAccount(data: CreateUser) {
+    async createAccount(data: CreateUser) {
         return this.http.Post('/auth/create-account', data)
     }
 
