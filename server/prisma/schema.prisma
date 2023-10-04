@@ -10,25 +10,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Comments {
-  id String @default(uuid()) @id
-  content String
-}
-
-
 model User {
-  id String @default(uuid()) @id
-  userName String @unique
+  id        String @id @default(uuid())
+  userName  String @unique
   firstName String
-  password String
-  email String @unique
-  Posts Post[]
+  password  String
+  email     String @unique
+  Posts     Post[]
 }
 
 model Post {
-  id String @default(uuid()) @id
+  id       String     @id @default(uuid())
+  content  String
+  comments Comments[]
+  likes    Int        @default(0)
+  user     User       @relation(fields: [userId], references: [userName])
+  userId   String
+}
+
+model Comments {
+  id      String @id @default(uuid())
   content String
-  likes Int @default(0)
-  user User @relation(fields: [userId], references: [userName])
-  userId String
+  post    Post   @relation(fields: [id], references: [id])
 }
