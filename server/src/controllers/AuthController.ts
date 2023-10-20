@@ -2,7 +2,7 @@
 import express, { Request, Response } from 'express';
 import {Prisma, PrismaClient} from '@prisma/client';
 import * as bcrypt  from 'bcrypt'
-import JWTService from '../function/JWTService.js'
+import JWTService from '../function/JWTService.ts'
 
 
 const authRouter = express.Router()
@@ -33,16 +33,6 @@ authRouter.post('/create-account', async (req: Request, res: Response) => {
         return res.json({error: 'Email is already in use'})
     }
 
-    const createdUser = await prisma.user.create({
-        data: {
-            userName: userName,
-            firstName: firstName,
-            password: encryptedPassword,
-            email: email,
-        }
-    })
-
-    return res.json(createdUser)
 })
 
 authRouter.post('/login', async (req: Request, res: Response) => {

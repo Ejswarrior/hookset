@@ -1,9 +1,9 @@
 import express, { Request, Response } from 'express'
 import { config } from 'dotenv'
 import bodyParser from 'body-parser'
-import postRouter from './controllers/postController.js'
+import postRouter from './controllers/postController.ts'
 import cors from 'cors'
-import authRouter from './controllers/AuthController.js'
+import authRouter from './controllers/AuthController.ts'
 
 const app = express()
 
@@ -18,7 +18,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'));
 app.use(express.json())
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/posts', postRouter)

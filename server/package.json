@@ -2,7 +2,7 @@
   "name": "hookset",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": "true",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,8 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
+    "@types/cors": "^2.8.15",
+    "@types/jsonwebtoken": "^9.0.4",
     "@types/node": "^20.4.1",
-    "prisma": "^5.0.0"
+    "prisma": "^5.0.0",
+    "ts-loader": "^9.5.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",

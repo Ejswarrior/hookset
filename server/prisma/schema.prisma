@@ -10,26 +10,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Comments {
+  id String @default(uuid()) @id
+  content String
+}
+
+
 model User {
-  id        String @id @default(uuid())
-  userName  String @unique
+  id String @default(uuid()) @id
+  userName String @unique
   firstName String
-  password  String
-  email     String @unique
-  Posts     Post[]
+  password String
+  email String @unique
+  createdAt  DateTime   @default(now())
+  Posts Post[]
 }
 
 model Post {
-  id       String     @id @default(uuid())
-  content  String
-  comments Comments[]
-  likes    Int        @default(0)
-  user     User       @relation(fields: [userId], references: [userName])
-  userId   String
+  id String @default(uuid()) @id
+  content String
+  catchData CatchData?
+  likes Int @default(0)
+  user User @relation(fields: [userId], references: [userName])
+  userId String
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime?   @updatedAt
+  impressions Int @default(0)
 }
 
-model Comments {
-  id      String @id @default(uuid())
-  content String
-  post    Post   @relation(fields: [id], references: [id])
+model CatchData {
+  id String @default(uuid()) @id
+  weight Int @default(0)
+  length Int @default(0)
+  species String
+  baitUsed String
+  location String
+  post Post @relation(fields: [postId], references: [id])
+  postId String @unique
 }
